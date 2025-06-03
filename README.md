@@ -140,7 +140,7 @@ Hasil evaluasi pada data latih dan data test adalah sebagai berikut.
 | AdaBoost (Boosting) | 19216221.72    | 18590823.96    |
 
 Untuk mempermudah memahami informasi penggunaan metrik dapat dilihat mekihat hasil plot berupa bar chart. 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](C:/Users/GILBERT/Pictures/Screenshots)
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshot 2025-05-30 140850.png)
 
 Dari gambar di atas, terlihat bahwa, model Random Forest (RF) memberikan nilai eror yang paling kecil. Sedangkan model dengan algoritma Boosting memiliki eror yang paling besar (berdasarkan grafik, angkanya di atas 800). Sehingga model RF yang akan kita pilih sebagai model terbaik untuk melakukan prediksi harga penjualan mobil bekas.
  
