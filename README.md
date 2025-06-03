@@ -46,8 +46,9 @@ Evaluasi Kinerja Model Menggunakan Mean Squared Error (MSE)
 Melakukan evaluasi kuantitatif terhadap setiap model machine learning menggunakan Mean Squared Error (MSE) yang telah disesuaikan satuannya (dibagi 1000 atau 1e3 untuk skala interpretasi yang lebih baik). MSE dihitung pada data training dan testing untuk mengukur performa model dan mendeteksi potensi overfitting atau underfitting.
 
 ## Data Understanding
-Dataset yang digunakan dalam proyek ini merupakan dataset mobil bekas yang diperoleh dari platform CarDekho, salah satu situs marketplace otomotif terbesar di India. Dataset ini berisi informasi mengenai spesifikasi kendaraan serta harga jual mobil bekas yang tercatat. Dataset ini tersedia secara publik dan dapat diunduh melalui tautan berikut:
-[🔗 Kaggle - CarDekho Vehicle Dataset]
+Dataset yang digunakan dalam proyek ini merupakan dataset mobil bekas yang diperoleh dari platform CarDekho, salah satu situs marketplace otomotif terbesar di India. Dataset ini berisi informasi mengenai spesifikasi kendaraan serta harga jual mobil bekas yang tercatat. Dataset tersebut terdiri dari 8128 Baris dan 12 Kolom. 
+Dataset ini tersedia secara publik dan dapat diunduh melalui tautan berikut:
+🔗 Kaggle - CarDekho Vehicle Dataset
 Deskripsi Dataset
 Dataset ini terdiri dari beberapa fitur penting yang dapat digunakan untuk memprediksi harga jual mobil bekas. Berikut adalah uraian masing-masing fitur:
 
