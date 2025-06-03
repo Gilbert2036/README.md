@@ -50,7 +50,8 @@ Dataset yang digunakan dalam proyek ini merupakan dataset mobil bekas yang diper
 
 Dataset ini tersedia secara publik dan dapat diunduh melalui tautan berikut:
 [car-price-prediction](https://www.kaggle.com/code/abdullahmazari/car-price-prediction)
-Deskripsi Dataset
+
+
 Dataset ini terdiri dari beberapa fitur penting yang dapat digunakan untuk memprediksi harga jual mobil bekas. Berikut adalah uraian masing-masing fitur:
 
 ## Deskripsi Dataset
