@@ -58,27 +58,42 @@ Dataset ini terdiri dari beberapa fitur penting yang dapat digunakan untuk mempr
 
 | Nama Fitur       | Tipe Data   | Deskripsi                                                                 |
 |------------------|-------------|---------------------------------------------------------------------------|
-| `Car_Name`       | Kategorikal | Nama mobil (brand + model). Umumnya tidak digunakan langsung dalam model.|
+| `brand`          | Kategorikal | Nama mobil (brand). Umumnya tidak digunakan langsung dalam model.|
 | `Year`           | Numerik     | Tahun mobil dibuat (digunakan untuk menghitung usia kendaraan).          |
 | `Selling_Price`  | Numerik     | Harga jual mobil (dalam lakhs/100,000 INR) – *target variable*.          |
-| `Present_Price`  | Numerik     | Harga mobil saat ini jika baru (dalam lakhs).                            |
 | `Kms_Driven`     | Numerik     | Jumlah kilometer yang telah ditempuh oleh mobil.                         |
 | `Fuel_Type`      | Kategorikal | Jenis bahan bakar: Petrol, Diesel, CNG.                                  |
-| `Seller_Type`    | Kategorikal | Tipe penjual: Individual, Dealer, atau Trustmark Dealer.                |
+| `Seller_Type`    | Kategorikal | Tipe penjual: Individual, Dealer, atau Trustmark Dealer.                 |
 | `Transmission`   | Kategorikal | Jenis transmisi: Manual atau Automatic.                                  |
 | `Owner`          | Numerik     | Jumlah kepemilikan sebelumnya: 0, 1, 2, atau 3.                          |
 
 ## Data Preparation
 1. Penanganan Missing Value Menggunakan fillna
    menggunakan imputasi mean dan modus.
-2. Feature Engineering
+   ## Informasi Missing Values
+
+   | Kolom                 | Jumlah Missing Values |
+   |-----------------------|-----------------------|
+   | year                  | 0                     |
+   | selling_price         | 0                     |
+   | km_driven             | 0                     |
+   | fuel                  | 0                     |
+   | seller_type           | 0                     |
+   | transmission          | 0                     |
+   | owner                 | 0                     |
+   | mileage(km/ltr/kg)    | 221                   |
+   | engine                | 221                   |
+   | max_power             | 215                   |
+   | seats                 | 221                   |
+   | brand                 | 0                     |
+3. Feature Engineering
    Untuk membuat kolom 'brand' dari 'name' dilakukan ekstraksi untuk menyederhanakan nilai kolom 'name'.
-3. Pembersihan data pada kolom 'max_power'
+4. Pembersihan data pada kolom 'max_power'
    mengubah spasi menjadi '0' dan menkonversi tipe data.
-4. Menghapus Outlier
-   Menggunakan metode IQR sehingga jumlah dataset menjadi 5639 Baris dan 12 Kolom
-5. Menghapus fitur yang tidak memiliki pengaruh besar terhadap 'selling_rice' sebagai target
-6. One-Hot Encoding untuk Variabel Kategorikal
+5. Menghapus Outlier
+   Menggunakan metode IQR pada fitur yang bersifat numeric ('year','selling_price','km_driven','mileage(km/ltr/kg)','engine','max_power','seats') sehingga jumlah     dataset menjadi 5639 Baris dan 12 Kolom
+6. Menghapus fitur ('engine', 'max_power') yang tidak memiliki pengaruh besar terhadap 'selling_rice' sebagai target
+7. One-Hot Encoding untuk Variabel Kategorikal
 Langkah:
 Mengubah variabel kategorikal menjadi variabel numerik menggunakan teknik One-Hot Encoding:
 'fuel'
@@ -87,19 +102,19 @@ Mengubah variabel kategorikal menjadi variabel numerik menggunakan teknik One-Ho
 'brand'
 'owner'
 
-7. Principal Component Analysis (PCA)
+8. Principal Component Analysis (PCA)
 Langkah:
 PCA dilakukan pada fitur numerik 'year','km_driven','mileage(km/ltr/kg)' untuk mengurangi dimensi menjadi 1 komponen untuk fitur dimension.
 
-8. Memisahkan Fitur dan Target
+9. Memisahkan Fitur dan Target
 Langkah:
 Memisahkan fitur prediktor (X) dan target variabel (y) yaitu selling_price
 
-9. Train-Test Split
+10. Train-Test Split
 Langkah:
 Membagi dataset menjadi data pelatihan (90%) dan data pengujian (10%) dengan seed random untuk replikasi.
 
-10. Feature Scaling pada Fitur Numerik
+11. Feature Scaling pada Fitur Numerik
 Langkah:
 Standarisasi fitur numerik: year, km_driven, mileage(km/ltr/kg), dan dimension menggunakan StandardScaler. Beberapa model regresi sangat sensitif terhadap skala fitur. Proses standardisasi akan membuat mean = 0 dan standar deviasi = 1 untuk menghindari dominasi fitur berskala besar.
 
