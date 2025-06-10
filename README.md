@@ -47,6 +47,7 @@ Melakukan evaluasi kuantitatif terhadap setiap model machine learning menggunaka
 
 ## Data Understanding
 Dataset yang digunakan dalam proyek ini merupakan dataset mobil bekas yang diperoleh dari platform CarDekho, salah satu situs marketplace otomotif terbesar di India. Dataset ini berisi informasi mengenai spesifikasi kendaraan serta harga jual mobil bekas yang tercatat. Dataset awal tersebut terdiri dari 8128 Baris dan 12 Kolom. Dari dataset tersebut ditemukan missing value pada kolom 'mileage(km/ltr/kg)', 'engine', 'max_power', dan 'seats'.
+Kolom 'mileage(km/ltr/kg)' merepresentasikan efisiensi bahan bakar dalam kilometer per liter atau kilogram. Kolom 'engine' menunjukkan kapasitas mesin dalam cc. Kolom 'max_power' mengindikasikan tenaga maksimum mesin dalam PS atau kW dan kolom 'seats' menjelaskan jumlah tempat duduk yang dimiliki.
 
 Dataset ini tersedia secara publik dan dapat diunduh melalui tautan berikut:
 [car-price-prediction](https://www.kaggle.com/code/abdullahmazari/car-price-prediction)
