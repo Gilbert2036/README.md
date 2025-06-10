@@ -46,8 +46,24 @@ Evaluasi Kinerja Model Menggunakan Mean Squared Error (MSE)
 Melakukan evaluasi kuantitatif terhadap setiap model machine learning menggunakan Mean Squared Error (MSE) yang telah disesuaikan satuannya (dibagi 1000 atau 1e3 untuk skala interpretasi yang lebih baik). MSE dihitung pada data training dan testing untuk mengukur performa model dan mendeteksi potensi overfitting atau underfitting.
 
 ## Data Understanding
+
+| Nama Fitur       | Tipe Data   | Deskripsi                                                                 |
+|------------------|-------------|---------------------------------------------------------------------------|
+| `name`          | Kategorikal | Nama mobil|
+| `brand`          | Kategorikal | Nama mobil (brand) hasil ekstraksi dari kolom 'name'. Umumnya tidak digunakan langsung dalam model.|
+| `Year`           | Numerik     | Tahun mobil dibuat (digunakan untuk menghitung usia kendaraan).          |
+| `Selling_Price`  | Numerik     | Harga jual mobil (dalam lakhs/100,000 INR) – *target variable*.          |
+| `Kms_Driven`     | Numerik     | Jumlah kilometer yang telah ditempuh oleh mobil.                         |
+| `Fuel_Type`      | Kategorikal | Jenis bahan bakar: Petrol, Diesel, CNG.                                  |
+| `Seller_Type`    | Kategorikal | Tipe penjual: Individual, Dealer, atau Trustmark Dealer.                 |
+| `Transmission`   | Kategorikal | Jenis transmisi: Manual atau Automatic.                                  |
+| `Owner`          | Numerik     | Jumlah kepemilikan sebelumnya: 0, 1, 2, atau 3.                          |
+| `mileage(km/ltr/kg)`          | Numerik     | merepresentasikan efisiensi bahan bakar dalam kilometer per liter atau kilogram                        |
+| `engine`          | Numerik     | menunjukkan kapasitas mesin dalam cc.                          |
+| `max_power`          | Numerik     | mengindikasikan tenaga maksimum mesin dalam PS atau kW.   
+
 Dataset yang digunakan dalam proyek ini merupakan dataset mobil bekas yang diperoleh dari platform CarDekho, salah satu situs marketplace otomotif terbesar di India. Dataset ini berisi informasi mengenai spesifikasi kendaraan serta harga jual mobil bekas yang tercatat. Dataset awal tersebut terdiri dari 8128 Baris dan 12 Kolom. Dari dataset tersebut ditemukan missing value pada kolom 'mileage(km/ltr/kg)', 'engine', 'max_power', dan 'seats'.
-Kolom 'mileage(km/ltr/kg)' merepresentasikan efisiensi bahan bakar dalam kilometer per liter atau kilogram. Kolom 'engine' menunjukkan kapasitas mesin dalam cc. Kolom 'max_power' mengindikasikan tenaga maksimum mesin dalam PS atau kW dan kolom 'seats' menjelaskan jumlah tempat duduk yang dimiliki.
+
 
 Dataset ini tersedia secara publik dan dapat diunduh melalui tautan berikut:
 [car-price-prediction](https://www.kaggle.com/code/abdullahmazari/car-price-prediction)
@@ -133,15 +149,15 @@ Pada tahap ini, beberapa algoritma regresi digunakan untuk membangun model predi
 
 **Random forest** merupakan salah satu model machine learning yang termasuk ke dalam kategori ensemble (group) learning. Ia merupakan model prediksi yang terdiri dari beberapa model dan bekerja secara bersama-sama. Ide dibalik model ensemble adalah sekelompok model yang bekerja bersama menyelesaikan masalah. Sehingga, tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian.
 RandomForestRegressor dengan beberapa nilai parameter. Berikut adalah parameter-parameter yang digunakan:
-n_estimator: jumlah trees (pohon) di forest. Di sini kita set n_estimator=50.
-max_depth: kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan.
-random_state: digunakan untuk mengontrol random number generator yang digunakan. 
-n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
+n_estimato=50 jumlah trees (pohon) di forest. Di sini kita set n_estimator=50.
+max_depth=16 kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan.
+random_state=55 digunakan untuk mengontrol random number generator yang digunakan. 
+n_jobs=-1 jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
 
  **Boosting** bekerja dengan membangun model dari data latih. Kemudian ia membuat model kedua yang bertugas memperbaiki kesalahan dari model pertama. Model ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. 
 Berikut merupakan parameter-parameter yang digunakan pada model AdaBoostRegressor.
-learning_rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting.
-random_state: digunakan untuk mengontrol random number generator yang digunakan.
+learning_rate=0.05 bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting.
+random_state=55 digunakan untuk mengontrol random number generator yang digunakan.
 Nilai MSE yang lebih kecil menandakan performa prediksi yang lebih baik.
 Random Forest menunjukkan performa terbaik pada data uji (test set), dengan generalisasi yang sangat baik tanpa overfitting.
 
