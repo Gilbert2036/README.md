@@ -49,7 +49,7 @@ Melakukan evaluasi kuantitatif terhadap setiap model machine learning menggunaka
 
 | Nama Fitur       | Tipe Data   | Deskripsi                                                                 |
 |------------------|-------------|---------------------------------------------------------------------------|
-| `name`          | Kategorikal | Nama mobil|
+| `name`          | Kategorikal | Berisi nama beserta tipe mobil yang begitu panjang dan perlu di sederhanakan|
 | `brand`          | Kategorikal | Nama mobil (brand) hasil ekstraksi dari kolom 'name'. Umumnya tidak digunakan langsung dalam model.|
 | `Year`           | Numerik     | Tahun mobil dibuat (digunakan untuk menghitung usia kendaraan).          |
 | `Selling_Price`  | Numerik     | Harga jual mobil (dalam lakhs/100,000 INR) – *target variable*.          |
