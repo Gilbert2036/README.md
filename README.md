@@ -149,17 +149,19 @@ Pada tahap ini, beberapa algoritma regresi digunakan untuk membangun model predi
 
 **Random forest** merupakan salah satu model machine learning yang termasuk ke dalam kategori ensemble (group) learning. Ia merupakan model prediksi yang terdiri dari beberapa model dan bekerja secara bersama-sama. Ide dibalik model ensemble adalah sekelompok model yang bekerja bersama menyelesaikan masalah. Sehingga, tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian.
 RandomForestRegressor dengan beberapa nilai parameter. Berikut adalah parameter-parameter yang digunakan:
-n_estimato=50 jumlah trees (pohon) di forest. Di sini kita set n_estimator=50.
-max_depth=16 kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan.
-random_state=55 digunakan untuk mengontrol random number generator yang digunakan. 
-n_jobs=-1 jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
+1. n_estimator: jumlah trees (pohon) di forest. Di sini kita set n_estimator=50.
+2. max_depth: kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat        membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan.
+   Di sini kita set max_depth=16 
+3. random_state: digunakan untuk mengontrol random number generator yang digunakan.
+   Di sini kita set random_state=55 
+4. n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel.
+   Disini n_jobs=-1 artinya semua proses berjalan secara paralel.
 
  **Boosting** bekerja dengan membangun model dari data latih. Kemudian ia membuat model kedua yang bertugas memperbaiki kesalahan dari model pertama. Model ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. 
 Berikut merupakan parameter-parameter yang digunakan pada model AdaBoostRegressor.
-learning_rate=0.05 bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting.
-random_state=55 digunakan untuk mengontrol random number generator yang digunakan.
-Nilai MSE yang lebih kecil menandakan performa prediksi yang lebih baik.
-Random Forest menunjukkan performa terbaik pada data uji (test set), dengan generalisasi yang sangat baik tanpa overfitting.
+1. learning_rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting.Disini kita set learning_rate=0.05
+2. random_state: digunakan untuk mengontrol random number generator yang digunakan.
+   di sini kita set random_state=55
 
 ## Evaluation
 Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi.
